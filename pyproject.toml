@@ -1,7 +1,7 @@
 [project]
 name = "task-manager-api"
 version = "0.1.0"
-description = "API de práctica para gestionar tareas en memoria con FastAPI."
+description = "A practice API for managing tasks in memory with FastAPI."
 readme = "README.md"
 authors = [
     { name = "mishaaac" }
