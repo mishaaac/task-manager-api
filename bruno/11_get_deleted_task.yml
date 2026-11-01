@@ -1,0 +1,33 @@
+info:
+  name: 11 - Verify task deletion
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: "{{base_url}}/tasks/{{task2_id}}"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Returns 404 Not Found", function () {
+          expect(res.getStatus()).to.equal(404);
+        });
+
+        test("The error message identifies the deleted task", function () {
+          expect(res.getBody()).to.deep.equal({
+            detail: `task (${bru.getVar("task2_id")}) not found`
+          });
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 404 with {"detail":"task (<task2_id>) not found"}.
+  This expected error confirms that the previous step's deletion persisted.

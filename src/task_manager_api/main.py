@@ -1,14 +1,71 @@
-from fastapi import FastAPI, Query, Body, HTTPException
+from datetime import datetime
+from enum import Enum
+from fastapi import FastAPI, Query, HTTPException
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
 
 app = FastAPI(title='Task Manager')
+
+# ================================================================
+#                       ENUMS
+# ================================================================
+
+
+class TaskStatus(str, Enum):
+    PENDING = 'pending'
+    IN_PROGRESS = 'in_progress'
+    COMPLETED = 'completed'
+    CANCELED = 'canceled'
+
+
+class TaskPriority(str, Enum):
+    LOW = 'low'
+    MEDIUM = 'medium'
+    HIGH = 'high'
+    URGENT = 'urgent'
+
+
+class AllowedTags(str, Enum):
+    WORK = 'work'
+    STUDY = 'study'
+    PERSONAL = 'personal'
+    FINANCE = 'finance'
+    HOME = 'home'
+
+
+# ================================================================
+#                       MODELS (ENTIDADES PURAS)
+# ================================================================
+
+
+class Author:
+    def __init__(self, name: str, email: str):
+        self.name = name
+        self.email = email
 
 
 class Task:
     id_counter = 1
 
-    def __init__(self, title: str):
+    def __init__(
+        self,
+        title: str,
+        content: str | None,
+        status: TaskStatus,
+        priority: TaskPriority,
+        tags: list[AllowedTags],
+        due_date: datetime | None,
+        author: Author
+    ):
         self.id = Task.id_counter
         self.title = title
+        self.content = content
+        self.status = status
+        self.priority = priority
+        self.tags = tags
+        self.due_date = due_date
+        self.author = author
+        self.created_at = datetime.now()
+        self.updated_at = self.created_at
 
         Task.id_counter += 1
 
@@ -16,46 +73,131 @@ class Task:
 tasks: list[Task] = []
 
 
-@app.post('/tasks', status_code=201)
-def create_task(raw_task: dict = Body(...)):
-    title = validate_title(raw_task)
-    task = Task(title)
+# ================================================================
+#                       DTOs (PYDANTIC)
+# ================================================================
+
+
+class AuthorDTO(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True, from_attributes=True)
+
+    name: str = Field(..., min_length=1, max_length=100)
+    email: EmailStr
+
+
+class TaskBaseDTO(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    title: str = Field(..., min_length=1, max_length=100)
+    content: str | None = None
+    status: TaskStatus = TaskStatus.PENDING
+    priority: TaskPriority = TaskPriority.MEDIUM
+    tags: list[AllowedTags] = []
+    due_date: datetime | None = None
+    author: AuthorDTO
+
+
+class TaskCreateDTO(TaskBaseDTO):
+    pass
+
+
+class TaskUpdateDTO(TaskBaseDTO):
+    status: TaskStatus
+    priority: TaskPriority
+
+
+class TaskResponseDTO(TaskBaseDTO):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    created_at: datetime
+    updated_at: datetime
+
+
+# ================================================================
+#                       ENDPOINTS
+# ================================================================
+
+
+@app.get('/')
+def home():
+    return {'message': 'Welcome to Task Manager'}
+
+
+@app.post('/tasks', response_model=TaskResponseDTO, status_code=201)
+def create_task(new_task: TaskCreateDTO):
+    author_entity = Author(
+        name=new_task.author.name,
+        email=new_task.author.email
+    )
+
+    task = Task(
+        title=new_task.title,
+        content=new_task.content,
+        status=new_task.status,
+        priority=new_task.priority,
+        tags=new_task.tags,
+        due_date=new_task.due_date,
+        author=author_entity
+    )
+
     tasks.append(task)
+
     return task
 
 
-@app.get('/tasks')
-def get_tasks(query: str | None = Query(default=None, description='Filter tasks')):
-    if query:
-        query = query.strip().lower()
+@app.get('/tasks', response_model=list[TaskResponseDTO], status_code=200)
+def get_tasks(
+    status: TaskStatus | None = Query(
+        default=None, description="Filter by status"),
+    priority: TaskPriority | None = Query(
+        default=None, description="Filter by priority"),
+    tag: AllowedTags | None = Query(default=None, description="Filter by tags")
+):
+    filtered_tasks = tasks
 
-    if query:
-        filtered_tasks = []
-        for task in tasks:
-            if query in task.title.lower():
-                filtered_tasks.append(task)
-        return {'count': len(filtered_tasks), 'data': filtered_tasks}
-    return {'count': len(tasks), 'data': tasks}
+    if status:
+        filtered_tasks = [
+            task for task in filtered_tasks if task.status == status]
+
+    if priority:
+        filtered_tasks = [
+            task for task in filtered_tasks if task.priority == priority]
+
+    if tag:
+        filtered_tasks = [task for task in filtered_tasks if tag in task.tags]
+
+    return filtered_tasks
 
 
-@app.get('/tasks/{id}')
+@app.get('/tasks/{id}', response_model=TaskResponseDTO, status_code=200)
 def get_task(id: int):
     for task in tasks:
         if task.id == id:
             return task
 
-    raise HTTPException(status_code=404, detail='task not found')
+    raise HTTPException(status_code=404, detail=f'task ({id}) not found')
 
 
-@app.put('/tasks/{id}')
-def update_task(id: int, raw_task: dict = Body(...)):
-    title = validate_title(raw_task)
+@app.put('/tasks/{id}', response_model=TaskResponseDTO, status_code=200)
+def update_task(id: int, updated_task: TaskUpdateDTO):
     for task in tasks:
         if task.id == id:
-            task.title = title
-            return {'message': 'task updated successfully'}
+            task.title = updated_task.title
+            task.content = updated_task.content
+            task.status = updated_task.status
+            task.priority = updated_task.priority
+            task.tags = updated_task.tags
+            task.due_date = updated_task.due_date
 
-    raise HTTPException(status_code=404, detail='task not found')
+            task.author.name = updated_task.author.name
+            task.author.email = updated_task.author.email
+
+            task.updated_at = datetime.now()
+
+            return task
+
+    raise HTTPException(status_code=404, detail=f'task ({id}) not found')
 
 
 @app.delete('/tasks/{id}', status_code=204)
@@ -65,19 +207,4 @@ def delete_task(id: int):
             tasks.pop(index)
             return
 
-    raise HTTPException(status_code=404, detail='task not found')
-
-
-def validate_title(raw_task: dict):
-    if 'title' not in raw_task:
-        raise HTTPException(status_code=422, detail='title is mandatory')
-
-    title = raw_task['title']
-    if not isinstance(title, str):
-        raise HTTPException(status_code=422, detail='title must be a string')
-
-    title = title.strip()
-    if not title:
-        raise HTTPException(status_code=422, detail='title cannot be empty')
-
-    return title
+    raise HTTPException(status_code=404, detail=f'task ({id}) not found')

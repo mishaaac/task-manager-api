@@ -1,0 +1,53 @@
+info:
+  name: 06 - Filter second task
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{base_url}}/tasks?status=in_progress&priority=low&tag=study"
+  params:
+    - name: status
+      value: in_progress
+      type: query
+    - name: priority
+      value: low
+      type: query
+    - name: tag
+      value: study
+      type: query
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        const body = res.getBody();
+
+        test("Returns 200 OK", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test("Includes the second task and excludes the first", function () {
+          expect(body).to.be.an("array");
+          expect(body).to.deep.include(JSON.parse(bru.getVar("task2_snapshot")));
+          expect(body.some(task => task.id === bru.getVar("task1_id"))).to.equal(false);
+        });
+
+        test("Every task matches all three filters", function () {
+          body.forEach(task => {
+            expect(task.status).to.equal("in_progress");
+            expect(task.priority).to.equal("low");
+            expect(task.tags).to.include("study");
+          });
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 200 and an array containing the second task.
+  Checks a different combination of status, priority, and tag.

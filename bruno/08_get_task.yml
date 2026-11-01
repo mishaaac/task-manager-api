@@ -1,0 +1,31 @@
+info:
+  name: 08 - Get first task by ID
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{base_url}}/tasks/{{task1_id}}"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Returns 200 OK", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test("The retrieved task matches the first created task", function () {
+          expect(res.getBody()).to.deep.equal(JSON.parse(bru.getVar("task1_snapshot")));
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 200 and an object identical to the first creation response.
+  Uses the captured ID, which will be 1 if the server started with an empty store.

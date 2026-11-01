@@ -1,0 +1,69 @@
+info:
+  name: 01 - Create first task
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{base_url}}/tasks"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Preparar informe",
+        "content": "Revisar los gastos del mes",
+        "status": "pending",
+        "priority": "high",
+        "tags": ["work", "finance"],
+        "due_date": "2026-12-11T12:00:00",
+        "author": {
+          "name": "Ana",
+          "email": "ana@example.com"
+        }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        const body = res.getBody();
+
+        test("Returns 201 Created", function () {
+          expect(res.getStatus()).to.equal(201);
+        });
+
+        test("Preserves submitted fields, including the nested author", function () {
+          expect(body).to.deep.include({
+            title: "Preparar informe",
+            content: "Revisar los gastos del mes",
+            status: "pending",
+            priority: "high",
+            tags: ["work", "finance"],
+            due_date: "2026-12-11T12:00:00",
+            author: { name: "Ana", email: "ana@example.com" }
+          });
+        });
+
+        test("Generates an ID and timestamps; saves the task for subsequent steps", function () {
+          expect(Number.isInteger(body.id)).to.equal(true);
+          expect(body.id).to.be.above(0);
+          expect(body.created_at).to.match(/^\d{4}-\d{2}-\d{2}T/);
+          expect(Number.isNaN(Date.parse(body.created_at))).to.equal(false);
+          expect(body.updated_at).to.equal(body.created_at);
+          bru.setVar("task1_id", body.id);
+          bru.setVar("task1_snapshot", JSON.stringify(body));
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 201 and an object containing the submitted fields, id, created_at, and updated_at.
+  Saves task1_id and task1_snapshot as runtime variables.

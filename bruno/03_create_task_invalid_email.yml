@@ -1,0 +1,54 @@
+info:
+  name: 03 - Reject invalid email
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{base_url}}/tasks"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Tarea con email invalido",
+        "content": "Revisar los gastos del mes",
+        "status": "pending",
+        "priority": "high",
+        "tags": ["work", "finance"],
+        "due_date": "2026-12-11T12:00:00",
+        "author": {
+          "name": "Ana",
+          "email": "correo-invalido"
+        }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Returns 422 for invalid input", function () {
+          expect(res.getStatus()).to.equal(422);
+        });
+
+        test("The only validation error points to the author's email", function () {
+          const errors = res.getBody().detail;
+          expect(errors).to.be.an("array").with.lengthOf(1);
+          expect(errors[0].loc).to.deep.equal(["body", "author", "email"]);
+          expect(errors[0].type).to.equal("value_error");
+          expect(errors[0].input).to.equal("correo-invalido");
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 422 with detail[0].loc equal to ["body", "author", "email"].
+  The rest of the body is valid to isolate the EmailStr validation error.
+  The exact msg text may vary with the email-validator version.

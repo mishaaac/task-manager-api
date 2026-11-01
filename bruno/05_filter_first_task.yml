@@ -1,0 +1,53 @@
+info:
+  name: 05 - Filter first task
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base_url}}/tasks?status=pending&priority=high&tag=work"
+  params:
+    - name: status
+      value: pending
+      type: query
+    - name: priority
+      value: high
+      type: query
+    - name: tag
+      value: work
+      type: query
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        const body = res.getBody();
+
+        test("Returns 200 OK", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test("Includes the first task and excludes the second", function () {
+          expect(body).to.be.an("array");
+          expect(body).to.deep.include(JSON.parse(bru.getVar("task1_snapshot")));
+          expect(body.some(task => task.id === bru.getVar("task2_id"))).to.equal(false);
+        });
+
+        test("Every task matches all three filters", function () {
+          body.forEach(task => {
+            expect(task.status).to.equal("pending");
+            expect(task.priority).to.equal("high");
+            expect(task.tags).to.include("work");
+          });
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 200 and an array containing the first task.
+  The status, priority, and tag filters combine with AND.

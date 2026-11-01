@@ -1,0 +1,31 @@
+info:
+  name: 10 - Delete second task
+  type: http
+  seq: 10
+
+http:
+  method: DELETE
+  url: "{{base_url}}/tasks/{{task2_id}}"
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Returns 204 No Content", function () {
+          expect(res.getStatus()).to.equal(204);
+        });
+
+        test("The response body is empty", function () {
+          expect(res.getBody()).to.equal("");
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 204 and an empty body. Must not return JSON, including null or {}.
+  Only deletes the second task created during this run.

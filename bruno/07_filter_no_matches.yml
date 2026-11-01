@@ -1,0 +1,41 @@
+info:
+  name: 07 - Filter with no matches
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{base_url}}/tasks?status=pending&priority=low&tag=work"
+  params:
+    - name: status
+      value: pending
+      type: query
+    - name: priority
+      value: low
+      type: query
+    - name: tag
+      value: work
+      type: query
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Returns 200 even when no tasks match", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test("Returns an empty array", function () {
+          expect(res.getBody()).to.deep.equal([]);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 200 with []. Neither task matches this combination.
+  Start with an empty store to avoid matches from tasks created outside this collection.

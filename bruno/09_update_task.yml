@@ -1,0 +1,65 @@
+info:
+  name: 09 - Update first task
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: "{{base_url}}/tasks/{{task1_id}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Preparar informe",
+        "content": "Revisar los gastos del mes",
+        "status": "completed",
+        "priority": "urgent",
+        "tags": ["work", "finance"],
+        "due_date": "2026-12-11T12:00:00",
+        "author": {
+          "name": "Ana",
+          "email": "ana@example.com"
+        }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        const body = res.getBody();
+        const original = JSON.parse(bru.getVar("task1_snapshot"));
+
+        test("Returns 200 OK", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test("Updates status and priority while preserving other fields", function () {
+          expect(body).to.deep.equal({
+            ...original,
+            status: "completed",
+            priority: "urgent",
+            updated_at: body.updated_at
+          });
+        });
+
+        test("Refreshes updated_at and preserves created_at", function () {
+          expect(body.created_at).to.equal(original.created_at);
+          expect(body.updated_at).not.to.equal(original.updated_at);
+          expect(Number.isNaN(Date.parse(body.updated_at))).to.equal(false);
+          expect(Date.parse(body.updated_at)).to.be.at.least(Date.parse(original.updated_at));
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 200, status completed, priority urgent, and a refreshed updated_at.
+  Sends the complete object: PUT requires title, status, priority, and author.
+  Omitting content, tags, or due_date would replace those fields with their defaults.

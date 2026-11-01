@@ -1,0 +1,22 @@
+opencollection: 1.0.0
+
+info:
+  name: Task Manager API
+bundled: false
+
+request:
+  variables:
+    - name: base_url
+      value: http://127.0.0.1:8000
+
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git
+
+docs: |-
+  CRUD test collection for Task Manager.
+  Run all 11 requests in order using Collection Runner.
+  The first two requests save task IDs for subsequent requests.
+  See README.md for setup instructions and expected results.

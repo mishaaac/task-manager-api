@@ -1,0 +1,70 @@
+info:
+  name: 02 - Create second task
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{base_url}}/tasks"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Estudiar FastAPI",
+        "content": "Practicar modelos anidados",
+        "status": "in_progress",
+        "priority": "low",
+        "tags": ["study", "personal"],
+        "due_date": "2026-12-12T18:00:00",
+        "author": {
+          "name": "Luis",
+          "email": "luis@example.com"
+        }
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        const body = res.getBody();
+
+        test("Returns 201 Created", function () {
+          expect(res.getStatus()).to.equal(201);
+        });
+
+        test("Preserves the second task's submitted data", function () {
+          expect(body).to.deep.include({
+            title: "Estudiar FastAPI",
+            content: "Practicar modelos anidados",
+            status: "in_progress",
+            priority: "low",
+            tags: ["study", "personal"],
+            due_date: "2026-12-12T18:00:00",
+            author: { name: "Luis", email: "luis@example.com" }
+          });
+        });
+
+        test("Generates a distinct ID and saves the task for subsequent steps", function () {
+          expect(Number.isInteger(body.id)).to.equal(true);
+          expect(body.id).to.be.above(0);
+          expect(body.id).not.to.equal(bru.getVar("task1_id"));
+          expect(body.created_at).to.match(/^\d{4}-\d{2}-\d{2}T/);
+          expect(Number.isNaN(Date.parse(body.created_at))).to.equal(false);
+          expect(body.updated_at).to.equal(body.created_at);
+          bru.setVar("task2_id", body.id);
+          bru.setVar("task2_snapshot", JSON.stringify(body));
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 201 and a task with a different status, priority, and tags from the first task.
+  Saves task2_id and task2_snapshot as runtime variables.
