@@ -1,7 +1,7 @@
 from datetime import datetime
 from enum import Enum
 from fastapi import FastAPI, Query, HTTPException
-from pydantic import BaseModel, Field, ConfigDict, EmailStr
+from pydantic import BaseModel, Field, ConfigDict, EmailStr, field_validator
 
 app = FastAPI(title='Task Manager')
 
@@ -106,6 +106,24 @@ class TaskUpdateDTO(TaskBaseDTO):
     priority: TaskPriority
 
 
+class TaskPatchDTO(BaseModel):
+    model_config = ConfigDict(str_strip_whitespace=True)
+
+    title: str | None = Field(default=None, min_length=1, max_length=100)
+    content: str | None = None
+    status: TaskStatus | None = None
+    priority: TaskPriority | None = None
+    tags: list[AllowedTags] | None = None
+    due_date: datetime | None = None
+
+    @field_validator('title', 'status', 'priority', 'tags', mode='before')
+    @classmethod
+    def reject_null(cls, value):
+        if value is None:
+            raise ValueError('field cannot be null')
+        return value
+
+
 class TaskResponseDTO(TaskBaseDTO):
     model_config = ConfigDict(from_attributes=True)
 
@@ -192,6 +210,22 @@ def update_task(id: int, updated_task: TaskUpdateDTO):
 
             task.author.name = updated_task.author.name
             task.author.email = updated_task.author.email
+
+            task.updated_at = datetime.now()
+
+            return task
+
+    raise HTTPException(status_code=404, detail=f'task ({id}) not found')
+
+
+@app.patch('/tasks/{id}', response_model=TaskResponseDTO, status_code=200)
+def patch_task(id: int, partial_task: TaskPatchDTO):
+    for task in tasks:
+        if task.id == id:
+            update_data = partial_task.model_dump(exclude_unset=True)
+
+            for key, value in update_data.items():
+                setattr(task, key, value)
 
             task.updated_at = datetime.now()
 

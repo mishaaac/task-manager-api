@@ -24,6 +24,7 @@ http://127.0.0.1:8000/docs.
 | GET | `/tasks?status=pending&priority=high&tag=work` | Filters tasks by status, priority, and tag. |
 | GET | `/tasks/{id}` | Retrieves a task. |
 | PUT | `/tasks/{id}` | Replaces a task's editable fields and refreshes `updated_at`. |
+| PATCH | `/tasks/{id}` | Updates only the submitted task fields and refreshes `updated_at`. |
 | DELETE | `/tasks/{id}` | Deletes a task and returns `204` with no response body. |
 
 To create or update a task, send a JSON body:
@@ -43,7 +44,7 @@ To create or update a task, send a JSON body:
 }
 ```
 
-Creating a task requires `title` and `author`; updating also requires `status`
+Creating a task requires `title` and `author`; replacing with PUT also requires `status`
 and `priority`. Titles and author names must contain 1–100 characters after
 trimming whitespace, and the author's email must be valid. Invalid input returns
 `422`; a task that does not exist returns `404` when the request is otherwise valid.
@@ -53,7 +54,24 @@ Priorities are `low`, `medium`, `high`, and `urgent`. Tags are `work`, `study`,
 `personal`, `finance`, and `home`. Query filters are optional and combine with AND;
 the query parameter for tags is singular: `tag`.
 
+## Partial updates
+
+Send only the fields you want to change to `PATCH /tasks/{id}`:
+
+```json
+{
+  "status": "completed",
+  "priority": "high"
+}
+```
+
+Supported fields are `title`, `content`, `status`, `priority`, `tags`, and
+`due_date`. Omitted fields, the author, and `created_at` stay unchanged.
+Use `null` to clear `content` or `due_date`, and `[]` to remove all tags.
+Explicit `null` is rejected for `title`, `status`, `priority`, and `tags`.
+An empty body `{}` preserves all editable fields and refreshes `updated_at`.
+
 The [bruno/](bruno/README.md) folder contains an OpenCollection YAML collection
-with 11 ordered requests and automated response checks. Open it in Bruno and run
+with 19 ordered requests and automated response checks. Open it in Bruno and run
 the full collection, or follow its README to use the CLI. Task IDs are captured
 automatically from the creation responses.

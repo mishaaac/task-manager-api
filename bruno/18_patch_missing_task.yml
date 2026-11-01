@@ -1,0 +1,33 @@
+info:
+  name: 18 - Patch a deleted task
+  type: http
+  seq: 18
+
+http:
+  method: PATCH
+  url: "{{base_url}}/tasks/{{task2_id}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Missing task"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Returns 404 for a deleted task", function () {
+          expect(res.getStatus()).to.equal(404);
+          expect(res.getBody()).to.deep.equal({detail: `task (${bru.getVar("task2_id")}) not found`});
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5

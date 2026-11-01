@@ -1,0 +1,38 @@
+info:
+  name: 16 - Reject invalid enum values
+  type: http
+  seq: 16
+
+http:
+  method: PATCH
+  url: "{{base_url}}/tasks/{{task1_id}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "status": "bad",
+        "priority": "bad",
+        "tags": [
+          "bad"
+        ]
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Returns 422 for invalid patch fields", function () {
+          expect(res.getStatus()).to.equal(422);
+          const fields = res.getBody().detail.map(error => error.loc.join("."));
+          ["status", "priority", "tags.0"].forEach(field => expect(fields).to.include("body." + field));
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5

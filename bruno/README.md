@@ -1,8 +1,8 @@
 # Task Manager API tests with Bruno
 
-This collection uses Bruno's OpenCollection YAML format. It includes 11 ordered
+This collection uses Bruno's OpenCollection YAML format. It includes 19 ordered
 requests and automated checks for HTTP status codes, response data, filters,
-timestamps, author validation, and deletion. Request names, test labels, and
+timestamps, author validation, partial updates, and deletion. Request names, test labels, and
 documentation are in English; sample user input is in Spanish.
 
 ## Run in Bruno
@@ -17,7 +17,7 @@ documentation are in English; sample user input is in Spanish.
    If you previously opened `task-manager-test-api/`, open the new location.
 3. The collection variable `base_url` points to `http://127.0.0.1:8000`.
    You can change it in the collection variables.
-4. Open **Collection Runner** and run all 11 requests in order, in a single run.
+4. Open **Collection Runner** and run all 19 requests in order, in a single run.
    You can also send them manually in that order.
 5. Review the results in **Tests**. Status codes `422` and `404` are expected
    responses: their checks should pass.
@@ -42,12 +42,23 @@ match its filters.
 | 10 | `10_delete_task.yml` | DELETE `/tasks/{{task2_id}}` | `204`: empty body. |
 | 11 | `11_get_deleted_task.yml` | GET `/tasks/{{task2_id}}` | `404`: `{"detail":"task (<id>) not found"}`. |
 
+| 12 | `12_patch_task.yml` | PATCH task | Partially update first task. |
+| 13 | `13_patch_clear_fields.yml` | PATCH task | Clear nullable fields. |
+| 14 | `14_patch_empty.yml` | PATCH task | Patch with an empty object. |
+| 15 | `15_patch_invalid_title.yml` | PATCH task | Reject a blank title. |
+| 16 | `16_patch_invalid_enums.yml` | PATCH task | Reject invalid enum values. |
+| 17 | `17_patch_null_required_fields.yml` | PATCH task | Reject null for nonnullable fields. |
+| 18 | `18_patch_missing_task.yml` | PATCH task | Patch a deleted task. |
+| 19 | `19_get_task_after_patches.yml` | GET task | Verify persisted patches and rejected input. |
+
 The first two requests save `task1_id`, `task2_id`, and response snapshots as
 runtime variables. You do not need to edit IDs: they will be 1 and 2 if the
 server started with an empty store. If you restart the server, run the
 collection again from the beginning.
 
-After the run, the first task remains updated and the second task is deleted.
+After the run, the first task has the patched title, status, and priority, with empty
+tags and cleared content and due date. The second task is deleted. Rejected patches
+leave the stored task unchanged.
 The server generates timestamps, which are not compared against fixed values.
 The PUT request sends the complete body to preserve content, tags, due date,
 and author.

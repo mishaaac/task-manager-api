@@ -1,0 +1,44 @@
+info:
+  name: 12 - Partially update first task
+  type: http
+  seq: 12
+
+http:
+  method: PATCH
+  url: "{{base_url}}/tasks/{{task1_id}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "  Updated task  ",
+        "status": "in_progress",
+        "priority": "low",
+        "tags": []
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        const body = res.getBody();
+        const original = JSON.parse(bru.getVar("patch_snapshot"));
+        test("Returns 200 and changes only submitted fields", function () {
+          expect(res.getStatus()).to.equal(200);
+          expect(body).to.deep.equal({...original, ...{"title": "Updated task", "status": "in_progress", "priority": "low", "tags": []}, updated_at: body.updated_at});
+        });
+        test("Preserves creation time and refreshes update time", function () {
+          expect(body.created_at).to.equal(original.created_at);
+          expect(body.updated_at).not.to.equal(original.updated_at);
+          expect(Number.isNaN(Date.parse(body.updated_at))).to.equal(false);
+        });
+        bru.setVar("patch_snapshot", JSON.stringify(body));
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5

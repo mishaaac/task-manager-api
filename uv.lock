@@ -1057,14 +1057,18 @@ wheels = [
 
 [[package]]
 name = "task-manager-api"
-version = "0.1.0"
+version = "0.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "fastapi", extra = ["standard"] },
+    { name = "pydantic", extra = ["email"] },
 ]
 
 [package.metadata]
-requires-dist = [{ name = "fastapi", extras = ["standard"], specifier = ">=0.162.0" }]
+requires-dist = [
+    { name = "fastapi", extras = ["standard"], specifier = ">=0.162.0" },
+    { name = "pydantic", extras = ["email"], specifier = ">=2.14.2" },
+]
 
 [[package]]
 name = "truststore"

@@ -17,6 +17,6 @@ extensions:
 
 docs: |-
   CRUD test collection for Task Manager.
-  Run all 11 requests in order using Collection Runner.
+  Run all 19 requests in order using Collection Runner.
   The first two requests save task IDs for subsequent requests.
   See README.md for setup instructions and expected results.

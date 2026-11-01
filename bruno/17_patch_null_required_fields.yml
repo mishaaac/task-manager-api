@@ -1,0 +1,37 @@
+info:
+  name: 17 - Reject null for nonnullable fields
+  type: http
+  seq: 17
+
+http:
+  method: PATCH
+  url: "{{base_url}}/tasks/{{task1_id}}"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": null,
+        "status": null,
+        "priority": null,
+        "tags": null
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Returns 422 for invalid patch fields", function () {
+          expect(res.getStatus()).to.equal(422);
+          const fields = res.getBody().detail.map(error => error.loc.join("."));
+          ["title", "status", "priority", "tags"].forEach(field => expect(fields).to.include("body." + field));
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
