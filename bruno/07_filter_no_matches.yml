@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/tasks?status=pending&priority=low&tag=work"
+  url: "{{base_url}}/tasks?status=pending&priority=low&tag=work&search=zzzsintareasbrunozzz"
   params:
     - name: status
       value: pending
@@ -15,6 +15,9 @@ http:
       type: query
     - name: tag
       value: work
+      type: query
+    - name: search
+      value: zzzsintareasbrunozzz
       type: query
   auth: inherit
 
@@ -26,8 +29,14 @@ runtime:
           expect(res.getStatus()).to.equal(200);
         });
 
-        test("Returns an empty array", function () {
-          expect(res.getBody()).to.deep.equal([]);
+        test("Returns an empty page", function () {
+          const body = res.getBody();
+          expect(body.items).to.deep.equal([]);
+          expect(body.total).to.equal(0);
+          expect(body.total_pages).to.equal(0);
+          expect(body.page).to.equal(1);
+          expect(body.has_prev).to.equal(false);
+          expect(body.has_next).to.equal(false);
         });
 
 settings:
@@ -37,5 +46,5 @@ settings:
   maxRedirects: 5
 
 docs: |-
-  Expected: 200 with []. Neither task matches this combination.
-  Start with an empty store to avoid matches from tasks created outside this collection.
+  Expected: 200 with items: [], total: 0 and total_pages: 0.
+  The search text does not match the startup examples or the tasks created by this collection.

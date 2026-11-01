@@ -1,39 +1,44 @@
+import json
 from datetime import datetime
 from enum import Enum
-from fastapi import FastAPI, Query, HTTPException
-from pydantic import BaseModel, Field, ConfigDict, EmailStr, field_validator
+from math import ceil
+from pathlib import Path
+from typing import Literal
 
-app = FastAPI(title='Task Manager')
+from fastapi import FastAPI, HTTPException, Query
+from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
+
+app = FastAPI(title="Task Manager")
 
 # ================================================================
-#                       ENUMS
+#                           ENUMS
 # ================================================================
 
 
 class TaskStatus(str, Enum):
-    PENDING = 'pending'
-    IN_PROGRESS = 'in_progress'
-    COMPLETED = 'completed'
-    CANCELED = 'canceled'
+    PENDING = "pending"
+    IN_PROGRESS = "in_progress"
+    COMPLETED = "completed"
+    CANCELED = "canceled"
 
 
 class TaskPriority(str, Enum):
-    LOW = 'low'
-    MEDIUM = 'medium'
-    HIGH = 'high'
-    URGENT = 'urgent'
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    URGENT = "urgent"
 
 
 class AllowedTags(str, Enum):
-    WORK = 'work'
-    STUDY = 'study'
-    PERSONAL = 'personal'
-    FINANCE = 'finance'
-    HOME = 'home'
+    WORK = "work"
+    STUDY = "study"
+    PERSONAL = "personal"
+    FINANCE = "finance"
+    HOME = "home"
 
 
 # ================================================================
-#                       MODELS (ENTIDADES PURAS)
+#                           MODELS
 # ================================================================
 
 
@@ -54,7 +59,7 @@ class Task:
         priority: TaskPriority,
         tags: list[AllowedTags],
         due_date: datetime | None,
-        author: Author
+        author: Author,
     ):
         self.id = Task.id_counter
         self.title = title
@@ -116,11 +121,11 @@ class TaskPatchDTO(BaseModel):
     tags: list[AllowedTags] | None = None
     due_date: datetime | None = None
 
-    @field_validator('title', 'status', 'priority', 'tags', mode='before')
+    @field_validator("title", "status", "priority", "tags", mode="before")
     @classmethod
     def reject_null(cls, value):
         if value is None:
-            raise ValueError('field cannot be null')
+            raise ValueError("field cannot be null")
         return value
 
 
@@ -132,22 +137,32 @@ class TaskResponseDTO(TaskBaseDTO):
     updated_at: datetime
 
 
+class PaginatedTaskDTO(BaseModel):
+    page: int
+    per_page: int
+    total: int
+    total_pages: int
+    has_prev: bool
+    has_next: bool
+    order_by: Literal["id", "title"]
+    direction: Literal["asc", "desc"]
+    search: str | None
+    items: list[TaskResponseDTO]
+
+
 # ================================================================
 #                       ENDPOINTS
 # ================================================================
 
 
-@app.get('/')
+@app.get("/")
 def home():
-    return {'message': 'Welcome to Task Manager'}
+    return {"message": "Welcome to Task Manager"}
 
 
-@app.post('/tasks', response_model=TaskResponseDTO, status_code=201)
+@app.post("/tasks", response_model=TaskResponseDTO, status_code=201)
 def create_task(new_task: TaskCreateDTO):
-    author_entity = Author(
-        name=new_task.author.name,
-        email=new_task.author.email
-    )
+    author_entity = Author(name=new_task.author.name, email=new_task.author.email)
 
     task = Task(
         title=new_task.title,
@@ -156,7 +171,7 @@ def create_task(new_task: TaskCreateDTO):
         priority=new_task.priority,
         tags=new_task.tags,
         due_date=new_task.due_date,
-        author=author_entity
+        author=author_entity,
     )
 
     tasks.append(task)
@@ -164,40 +179,96 @@ def create_task(new_task: TaskCreateDTO):
     return task
 
 
-@app.get('/tasks', response_model=list[TaskResponseDTO], status_code=200)
+@app.get("/tasks", response_model=PaginatedTaskDTO, status_code=200)
 def get_tasks(
-    status: TaskStatus | None = Query(
-        default=None, description="Filter by status"),
+    search: str | None = Query(
+        None,
+        description="Search by title",
+        min_length=3,
+        max_length=50,
+        pattern=r"^[\w\sáéíóúÁÉÍÓÚüÜ-]+$",
+    ),
+    status: TaskStatus | None = Query(default=None, description="Filter by status"),
     priority: TaskPriority | None = Query(
-        default=None, description="Filter by priority"),
-    tag: AllowedTags | None = Query(default=None, description="Filter by tags")
+        default=None, description="Filter by priority"
+    ),
+    tag: list[AllowedTags] | None = Query(
+        default=None,
+        description="Require all selected tags. Repeat tag to select multiple values.",
+    ),
+    per_page: int = Query(10, ge=1, le=50, description="Number of tasks to show"),
+    page: int = Query(1, ge=1, description="Number of page"),
+    order_by: Literal["id", "title"] = Query("id", description="Field order"),
+    direction: Literal["asc", "desc"] = Query("asc", description="Order"),
 ):
     filtered_tasks = tasks
 
-    if status:
+    if search:
         filtered_tasks = [
-            task for task in filtered_tasks if task.status == status]
+            task for task in filtered_tasks if search.lower() in task.title.lower()
+        ]
+
+    if status:
+        filtered_tasks = [task for task in filtered_tasks if task.status == status]
 
     if priority:
-        filtered_tasks = [
-            task for task in filtered_tasks if task.priority == priority]
+        filtered_tasks = [task for task in filtered_tasks if task.priority == priority]
 
     if tag:
-        filtered_tasks = [task for task in filtered_tasks if tag in task.tags]
+        filtered_tasks = [
+            task
+            for task in filtered_tasks
+            if all(selected_tag in task.tags for selected_tag in tag)
+        ]
 
-    return filtered_tasks
+    total = len(filtered_tasks)
+
+    total_pages = ceil(total / per_page) if total > 0 else 0
+
+    if total_pages == 0:
+        current_page = 1
+    else:
+        current_page = min(page, total_pages)
+
+    filtered_tasks = sorted(
+        filtered_tasks,
+        key=lambda task: getattr(task, order_by),
+        reverse=(direction == "desc"),
+    )
+
+    if total_pages == 0:
+        items = []
+    else:
+        start = (current_page - 1) * per_page
+        items = filtered_tasks[start : start + per_page]
+
+    has_prev = current_page > 1
+    has_next = current_page < total_pages if total_pages > 0 else False
+
+    return PaginatedTaskDTO(
+        page=current_page,
+        per_page=per_page,
+        total=total,
+        total_pages=total_pages,
+        has_prev=has_prev,
+        has_next=has_next,
+        order_by=order_by,
+        direction=direction,
+        search=search,
+        items=items,
+    )
 
 
-@app.get('/tasks/{id}', response_model=TaskResponseDTO, status_code=200)
+@app.get("/tasks/{id}", response_model=TaskResponseDTO, status_code=200)
 def get_task(id: int):
     for task in tasks:
         if task.id == id:
             return task
 
-    raise HTTPException(status_code=404, detail=f'task ({id}) not found')
+    raise HTTPException(status_code=404, detail=f"task ({id}) not found")
 
 
-@app.put('/tasks/{id}', response_model=TaskResponseDTO, status_code=200)
+@app.put("/tasks/{id}", response_model=TaskResponseDTO, status_code=200)
 def update_task(id: int, updated_task: TaskUpdateDTO):
     for task in tasks:
         if task.id == id:
@@ -215,10 +286,10 @@ def update_task(id: int, updated_task: TaskUpdateDTO):
 
             return task
 
-    raise HTTPException(status_code=404, detail=f'task ({id}) not found')
+    raise HTTPException(status_code=404, detail=f"task ({id}) not found")
 
 
-@app.patch('/tasks/{id}', response_model=TaskResponseDTO, status_code=200)
+@app.patch("/tasks/{id}", response_model=TaskResponseDTO, status_code=200)
 def patch_task(id: int, partial_task: TaskPatchDTO):
     for task in tasks:
         if task.id == id:
@@ -231,14 +302,27 @@ def patch_task(id: int, partial_task: TaskPatchDTO):
 
             return task
 
-    raise HTTPException(status_code=404, detail=f'task ({id}) not found')
+    raise HTTPException(status_code=404, detail=f"task ({id}) not found")
 
 
-@app.delete('/tasks/{id}', status_code=204)
+@app.delete("/tasks/{id}", status_code=204)
 def delete_task(id: int):
     for index, task in enumerate(tasks):
         if task.id == id:
             tasks.pop(index)
             return
 
-    raise HTTPException(status_code=404, detail=f'task ({id}) not found')
+    raise HTTPException(status_code=404, detail=f"task ({id}) not found")
+
+
+# ================================================================
+#                       DATOS DE EJEMPLO
+# ================================================================
+
+# Se cargan al iniciar; los cambios de la API solo se guardan en memoria.
+tasks_path = Path(__file__).with_name("tasks.json")
+
+if tasks_path.exists():
+    with tasks_path.open(encoding="utf-8") as tasks_file:
+        for task_data in json.load(tasks_file):
+            create_task(TaskCreateDTO.model_validate(task_data))

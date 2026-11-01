@@ -1,0 +1,70 @@
+info:
+  name: 23 - Filter by home study and work
+  type: http
+  seq: 23
+
+http:
+  method: GET
+  url: "{{base_url}}/tasks?tag=home&tag=study&tag=work&per_page=7&page=2&direction=desc"
+  params:
+    - name: tag
+      value: home
+      type: query
+    - name: tag
+      value: study
+      type: query
+    - name: tag
+      value: work
+      type: query
+    - name: per_page
+      value: "7"
+      type: query
+    - name: page
+      value: "2"
+      type: query
+    - name: direction
+      value: desc
+      type: query
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        const body = res.getBody();
+
+        test("Returns 200 OK", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test("Every task contains all three requested tags", function () {
+          expect(body.items).to.have.lengthOf(7);
+          body.items.forEach(task => {
+            expect(task.tags).to.include("home");
+            expect(task.tags).to.include("study");
+            expect(task.tags).to.include("work");
+          });
+        });
+
+        test("Returns the requested middle page in descending ID order", function () {
+          expect(body.total).to.equal(30);
+          expect(body.total_pages).to.equal(5);
+          expect(body.page).to.equal(2);
+          expect(body.per_page).to.equal(7);
+          expect(body.has_prev).to.equal(true);
+          expect(body.has_next).to.equal(true);
+          expect(body.order_by).to.equal("id");
+          expect(body.direction).to.equal("desc");
+          const ids = body.items.map(task => task.id);
+          expect(ids).to.deep.equal([...ids].sort((a, b) => b - a));
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 200 with total: 30, total_pages: 5, and seven tasks on page 2.
+  All three tags must be present. Uses the bundled 200-task example file.

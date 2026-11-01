@@ -1,0 +1,2929 @@
+[
+  {
+    "title": "Preparar presentación del proyecto",
+    "content": null,
+    "status": "pending",
+    "priority": "low",
+    "tags": [],
+    "due_date": null,
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Revisar documentación de la API",
+    "content": "Comprobar que cada endpoint incluya parámetros y ejemplos de respuesta.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-10-23T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Corregir error de inicio de sesión",
+    "content": "Reproducir el fallo reportado y verificar el acceso con un usuario de prueba.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-10-14T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Planificar reunión semanal",
+    "content": "Preparar la agenda y confirmar la disponibilidad del equipo.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-15T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Actualizar tablero del equipo",
+    "content": "Revisar las tareas pendientes y mover las que ya están terminadas.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-10-26T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Responder correos de clientes",
+    "content": "Atender las consultas recibidas y registrar los acuerdos.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-10-17T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Diseñar propuesta comercial",
+    "content": "Incluir alcance, tiempos de entrega y presupuesto estimado.",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Revisar contrato del proveedor",
+    "content": "Anotar dudas sobre las condiciones antes de la siguiente reunión.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-10-29T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Organizar archivos del proyecto",
+    "content": "Agrupar documentos por etapa y retirar copias duplicadas.",
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-10-20T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Preparar informe de resultados",
+    "content": "Comparar los resultados del mes con los objetivos acordados.",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-21T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Investigar herramientas de soporte",
+    "content": "Comparar tres alternativas según las necesidades del equipo.",
+    "status": "pending",
+    "priority": "high",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-11-01T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Probar formulario de contacto",
+    "content": null,
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-11-02T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Actualizar perfil profesional",
+    "content": "Añadir los proyectos recientes y revisar los datos de contacto.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Revisar accesibilidad del sitio",
+    "content": "Probar navegación con teclado y etiquetas de los formularios.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [],
+    "due_date": "2026-11-04T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Preparar demo del producto",
+    "content": "Elegir tres recorridos principales y preparar datos de ejemplo.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-11-05T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Documentar proceso de entrega",
+    "content": "Escribir los pasos que debe seguir el equipo para entregar una versión.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-12T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Resolver comentarios de revisión",
+    "content": "Atender las observaciones pendientes en la propuesta técnica.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-11-07T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Coordinar capacitación interna",
+    "content": "",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "work"
+    ],
+    "due_date": "2026-11-08T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Verificar copia de seguridad",
+    "content": "Comprobar que los archivos de prueba se puedan recuperar.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Cancelar campaña anterior",
+    "content": "Cerrar las actividades de una campaña que ya no se realizará.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "work",
+      "personal",
+      "home"
+    ],
+    "due_date": "2026-10-16T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Practicar paginación con Python",
+    "content": "Solicitar distintas páginas y comprobar que no se repitan los resultados.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-11-11T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Estudiar listas y diccionarios",
+    "content": "Resolver ejercicios de acceso, actualización y recorrido de colecciones.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "study",
+      "work"
+    ],
+    "due_date": "2026-10-18T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Repasar funciones y argumentos",
+    "content": null,
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-10-19T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Leer sobre validación de datos",
+    "content": "Anotar ejemplos de entradas válidas e inválidas para una API.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-11-14T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Resolver ejercicios de álgebra",
+    "content": "Completar diez ejercicios y revisar los resultados paso a paso.",
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "study",
+      "work"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Preparar examen de inglés",
+    "content": "Repasar vocabulario y practicar comprensión de lectura.",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-10-22T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Crear resumen de redes",
+    "content": "Explicar con ejemplos las diferencias entre solicitudes y respuestas.",
+    "status": "pending",
+    "priority": "high",
+    "tags": [],
+    "due_date": "2026-11-17T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Practicar consultas SQL",
+    "content": "Preparar consultas con filtros, ordenamiento y agrupaciones.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-18T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Completar curso de Git",
+    "content": "Practicar ramas, commits y resolución de un conflicto sencillo.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-10-25T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Revisar apuntes de estadística",
+    "content": "Organizar las fórmulas y añadir un ejemplo por concepto.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-11-20T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Estudiar pruebas de software",
+    "content": "Distinguir casos normales, límites y entradas incorrectas.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "study",
+      "work"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Preparar exposición de historia",
+    "content": "Seleccionar fuentes y ordenar los acontecimientos principales.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-10-13T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Implementar un CRUD de práctica",
+    "content": "Crear, consultar, actualizar y eliminar registros de ejemplo.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-11-23T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Leer capítulo de estructuras de datos",
+    "content": null,
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-24T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Practicar comprensión de listas",
+    "content": "",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-10-16T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Revisar ejercicio de fechas",
+    "content": "Trabajar con fechas opcionales y distintos husos horarios.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-10-17T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Entregar proyecto del curso",
+    "content": "Comprobar los requisitos y adjuntar instrucciones de ejecución.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "study",
+      "work"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Organizar horario de estudio",
+    "content": "Reservar bloques cortos de trabajo y tiempos de descanso.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "study"
+    ],
+    "due_date": "2026-10-19T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Investigar manejo de excepciones",
+    "content": "Probar errores controlados y escribir mensajes claros.",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "study",
+      "personal",
+      "home"
+    ],
+    "due_date": "2026-10-20T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Preparar preguntas para tutoría",
+    "content": "Reunir las dudas que surgieron durante los ejercicios de la semana.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [],
+    "due_date": "2026-11-30T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Agendar revisión dental",
+    "content": "Consultar horarios disponibles y confirmar una cita.",
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-10-22T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Planificar paseo del sábado",
+    "content": "Elegir un destino cercano y revisar el tiempo de traslado.",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-10-23T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Comprar regalo de cumpleaños",
+    "content": "Elegir un regalo dentro del presupuesto y preparar una tarjeta.",
+    "status": "pending",
+    "priority": "high",
+    "tags": [
+      "personal",
+      "home"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Organizar fotos del viaje",
+    "content": "Seleccionar las mejores fotos y agruparlas por lugar.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-10-25T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Leer veinte páginas de una novela",
+    "content": null,
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-10-26T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Preparar rutina de ejercicio",
+    "content": "Definir actividades para tres días de la semana.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [
+      "personal",
+      "home"
+    ],
+    "due_date": "2026-10-27T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Llamar a un familiar",
+    "content": "Coordinar una llamada para conversar durante el fin de semana.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-10-28T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Renovar documento personal",
+    "content": "Reunir los documentos necesarios y consultar las citas disponibles.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-10-14T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Reservar entradas al museo",
+    "content": "Confirmar la fecha y guardar la reserva.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "personal",
+      "home"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Practicar guitarra",
+    "content": "Repasar acordes y practicar una canción completa.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-10-31T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Actualizar calendario personal",
+    "content": "Registrar cumpleaños, citas y compromisos del próximo mes.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-10-17T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Preparar lista para el viaje",
+    "content": "",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "personal",
+      "home"
+    ],
+    "due_date": "2026-10-18T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Revisar suscripciones personales",
+    "content": "Identificar servicios que uso y decidir cuáles conservar.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [],
+    "due_date": "2026-11-03T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Cocinar una receta nueva",
+    "content": "Elegir una receta sencilla y comprobar los ingredientes.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-10-20T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Ordenar biblioteca digital",
+    "content": "Separar libros leídos y lecturas pendientes.",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "personal",
+      "home"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Inscribirse a taller de fotografía",
+    "content": null,
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-11-06T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Preparar salida con amigos",
+    "content": "Proponer una fecha y confirmar la asistencia.",
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-10-23T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Registrar metas del mes",
+    "content": "Elegir objetivos concretos y anotar cómo medir el avance.",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "personal",
+      "home"
+    ],
+    "due_date": "2026-10-24T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Revisar equipaje de mano",
+    "content": "Comprobar documentos y artículos necesarios para el trayecto.",
+    "status": "pending",
+    "priority": "high",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-11-09T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Cancelar reserva del restaurante",
+    "content": "Avisar al restaurante porque cambió el plan de la reunión.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [
+      "personal"
+    ],
+    "due_date": "2026-11-10T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Revisar presupuesto mensual",
+    "content": "Comparar ingresos, gastos fijos y dinero disponible.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "finance",
+      "personal"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Pagar recibo de electricidad",
+    "content": "Verificar el importe y guardar el comprobante del pago.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-11-12T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Registrar gastos de la semana",
+    "content": "Clasificar compras y revisar las categorías con mayor gasto.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-11-13T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Separar ahorro del mes",
+    "content": "Registrar el monto destinado a la meta de ahorro.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "finance",
+      "personal"
+    ],
+    "due_date": "2026-10-15T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Revisar estado de cuenta",
+    "content": "Comprobar movimientos y anotar cualquier cargo desconocido.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-11-15T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Comparar planes de internet",
+    "content": "Anotar precios y condiciones de las opciones disponibles.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [],
+    "due_date": "2026-11-16T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Organizar comprobantes de pago",
+    "content": null,
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "finance",
+      "personal"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Actualizar hoja de gastos",
+    "content": "Registrar los últimos pagos y revisar las sumas.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-10-19T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Preparar presupuesto del viaje",
+    "content": "",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-11-19T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Revisar fecha de pago de tarjeta",
+    "content": "Anotar la fecha de vencimiento en el calendario.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "finance",
+      "personal"
+    ],
+    "due_date": "2026-10-21T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Cancelar suscripción sin uso",
+    "content": "Confirmar la baja y guardar el comprobante.",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-10-22T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Registrar compra de materiales",
+    "content": "Anotar los productos comprados y adjuntar los recibos.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-11-22T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Planificar compra de computadora",
+    "content": "Definir el presupuesto máximo y las necesidades de uso.",
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "finance",
+      "personal"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Verificar reembolso pendiente",
+    "content": "Consultar el estado del reembolso y registrar la respuesta.",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-10-25T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Revisar gastos de transporte",
+    "content": "Comparar los gastos de las últimas cuatro semanas.",
+    "status": "pending",
+    "priority": "high",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-11-25T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Preparar fondo para reparaciones",
+    "content": "Anotar una meta de ahorro para gastos del hogar.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [
+      "finance",
+      "personal"
+    ],
+    "due_date": "2026-11-26T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Registrar pago de curso",
+    "content": "Guardar el comprobante y actualizar el presupuesto de estudio.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "finance",
+      "personal",
+      "home"
+    ],
+    "due_date": "2026-10-13T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Comparar precios de útiles",
+    "content": null,
+    "status": "pending",
+    "priority": "medium",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-11-28T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Cerrar presupuesto del trimestre",
+    "content": "Revisar diferencias entre lo previsto y lo gastado.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [],
+    "due_date": null,
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Revisar renovación de seguro",
+    "content": "Anotar las condiciones y la fecha de renovación.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "finance"
+    ],
+    "due_date": "2026-10-16T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Comprar alimentos de la semana",
+    "content": "Preparar una lista según las comidas planificadas.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-22T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Limpiar y ordenar la cocina",
+    "content": "Revisar superficies, cajones y alimentos próximos a vencer.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "finance"
+    ],
+    "due_date": "2026-10-23T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Reparar grifo del baño",
+    "content": "Identificar la pieza necesaria y coordinar la reparación.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-19T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Organizar armario",
+    "content": "Separar ropa de uso frecuente y prendas para donar.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-20T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Regar plantas del balcón",
+    "content": "Revisar la humedad de la tierra antes de regar.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "home",
+      "finance"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Cambiar focos de la sala",
+    "content": "",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-22T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Limpiar ventanas",
+    "content": "Preparar materiales y limpiar las ventanas accesibles.",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-23T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Revisar botiquín del hogar",
+    "content": "Comprobar el estado y las fechas de los artículos guardados.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "finance"
+    ],
+    "due_date": "2026-10-29T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Preparar menú semanal",
+    "content": null,
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-25T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Lavar ropa de cama",
+    "content": "Separar sábanas y fundas para el lavado.",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-26T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Ordenar herramientas",
+    "content": "Clasificar herramientas y guardar las piezas pequeñas.",
+    "status": "pending",
+    "priority": "high",
+    "tags": [
+      "home",
+      "finance"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Revisar detector de humo",
+    "content": "Comprobar el funcionamiento según las instrucciones del equipo.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [],
+    "due_date": "2026-11-02T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Donar objetos sin uso",
+    "content": "Seleccionar objetos en buen estado y coordinar la entrega.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-14T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Limpiar refrigeradora",
+    "content": "Retirar productos vencidos y organizar los alimentos.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "finance"
+    ],
+    "due_date": "2026-11-04T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Coordinar mantenimiento del edificio",
+    "content": "Confirmar el horario de atención con la administración.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-11-05T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Revisar cerradura de entrada",
+    "content": "Comprobar el funcionamiento y solicitar reparación si hace falta.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": "2026-10-17T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Comprar productos de limpieza",
+    "content": "Reponer únicamente los productos que se hayan terminado.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "home",
+      "finance"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Ordenar espacio de trabajo en casa",
+    "content": "Despejar el escritorio y organizar cables y materiales.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-11-08T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Reparar silla del comedor",
+    "content": "Revisar las uniones y reunir los materiales necesarios.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-20T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Preparar kit de emergencia del hogar",
+    "content": null,
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "finance"
+    ],
+    "due_date": "2026-10-21T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Revisar pendientes de mañana",
+    "content": "Elegir las tres actividades principales del siguiente día.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [],
+    "due_date": "2026-11-11T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Anotar ideas de la semana",
+    "content": "Guardar las ideas nuevas antes de decidir cómo organizarlas.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [],
+    "due_date": "2026-10-23T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Confirmar un horario pendiente",
+    "content": "",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [],
+    "due_date": null,
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Revisar lista de recordatorios",
+    "content": "Retirar recordatorios completados y actualizar los pendientes.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [],
+    "due_date": "2026-11-14T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Elegir próxima actividad",
+    "content": "Revisar opciones y seleccionar una actividad para el fin de semana.",
+    "status": "completed",
+    "priority": "low",
+    "tags": [],
+    "due_date": "2026-10-26T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Anotar una pregunta pendiente",
+    "content": "Registrar la duda para revisarla con más tiempo.",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [],
+    "due_date": "2026-10-12T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Revisar una nota guardada",
+    "content": "Leer la nota y decidir cuál es el siguiente paso.",
+    "status": "pending",
+    "priority": "high",
+    "tags": [],
+    "due_date": "2026-11-17T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Preparar lista de prioridades",
+    "content": "Ordenar los pendientes según el tiempo disponible.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [],
+    "due_date": "2026-11-18T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Organizar un nuevo objetivo",
+    "content": "Escribir un objetivo y una primera acción concreta.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [],
+    "due_date": null,
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Reservar tiempo para planificar",
+    "content": "Apartar quince minutos para revisar los próximos compromisos.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [],
+    "due_date": "2026-11-20T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Organizar despensa de la cocina",
+    "content": null,
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-11-21T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Limpiar filtro de la lavadora",
+    "content": "Consultar el manual y retirar los residuos del filtro.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-18T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Revisar sellos de las ventanas",
+    "content": "Identificar corrientes de aire y anotar las reparaciones necesarias.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-11-23T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Ordenar cajón de cubiertos",
+    "content": "Limpiar el organizador y separar los utensilios.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-11-24T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Cambiar cortina de la ducha",
+    "content": "Medir la cortina y colocar el reemplazo.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "home"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Limpiar ventilador de la habitación",
+    "content": "Desconectar el equipo y limpiar sus partes accesibles.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-22T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Revisar manguera de riego",
+    "content": "Comprobar las uniones y detectar posibles fugas.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-11-27T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Organizar ropa de temporada",
+    "content": "Guardar prendas limpias y separar las de uso frecuente.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-24T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Revisar bandejas del congelador",
+    "content": "Organizar los alimentos y etiquetar las porciones guardadas.",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-10-25T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Preparar zona para reciclar",
+    "content": "",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "home"
+    ],
+    "due_date": "2026-11-30T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Practicar fracciones en casa",
+    "content": "Resolver ejercicios en la mesa de estudio y revisar los resultados.",
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Leer apuntes en el rincón de estudio",
+    "content": null,
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-13T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Preparar tarjetas de vocabulario en casa",
+    "content": "Crear tarjetas con palabras nuevas y ejemplos de uso.",
+    "status": "pending",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-24T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Organizar materiales del curso en casa",
+    "content": "Separar cuadernos y libros por asignatura.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-25T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Repasar geometría en la pizarra del hogar",
+    "content": "Dibujar figuras y resolver problemas de perímetro.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-16T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Estudiar historia desde casa",
+    "content": "Construir una línea de tiempo con los temas de la clase.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-27T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Resolver crucigrama de inglés en casa",
+    "content": "Anotar las palabras nuevas y comprobar su significado.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Preparar experimento escolar en casa",
+    "content": "Reunir los materiales y registrar los pasos del experimento.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-19T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Repasar biología con diagramas en casa",
+    "content": "Dibujar un esquema y explicar sus partes principales.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-30T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Practicar lectura en voz alta en casa",
+    "content": "Leer un texto corto y revisar la pronunciación.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-31T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Revisar tarea de física en casa",
+    "content": "Comprobar las unidades y justificar cada resultado.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-22T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Estudiar mapas en el escritorio del hogar",
+    "content": "Identificar países, capitales y regiones en un mapa.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-23T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Preparar resumen de literatura en casa",
+    "content": null,
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Practicar caligrafía en casa",
+    "content": "Completar una hoja de ejercicios con atención al espaciado.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-25T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Organizar biblioteca de estudio del hogar",
+    "content": "Separar libros de consulta y lecturas del curso.",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-26T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Revisar ejercicios de química en casa",
+    "content": "Resolver problemas y revisar las fórmulas utilizadas.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-11-06T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Escuchar clase grabada desde casa",
+    "content": "",
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-13T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Preparar material de repaso en casa",
+    "content": "Crear una hoja con conceptos y ejemplos de la semana.",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-10-14T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Practicar cálculo mental en casa",
+    "content": "Resolver veinte operaciones y registrar los resultados.",
+    "status": "pending",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Preparar escritorio para examen remoto",
+    "content": "Organizar materiales y revisar iluminación y conexión.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study"
+    ],
+    "due_date": "2026-11-10T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Practicar filtros de tareas en el proyecto remoto",
+    "content": "Desde casa, probar consultas con una, dos y tres etiquetas.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-10-17T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Estudiar paginación para el equipo desde casa",
+    "content": "Preparar ejemplos de páginas completas, parciales y sin resultados.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-12T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Preparar capacitación remota sobre Python",
+    "content": "Crear ejercicios del curso interno en el espacio de trabajo del hogar.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-13T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Documentar aprendizaje del proyecto desde casa",
+    "content": null,
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-10-20T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Revisar curso de accesibilidad para el trabajo remoto",
+    "content": "Estudiar un módulo y probar sus ejemplos desde casa.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Practicar revisión de código en casa",
+    "content": "Estudiar una propuesta del equipo y preparar comentarios concretos.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-16T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Preparar taller de pruebas desde el hogar",
+    "content": "Reunir ejemplos válidos e inválidos para una sesión del equipo.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-10-23T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Estudiar consultas SQL del proyecto en casa",
+    "content": "Repasar filtros y ordenamiento con datos de práctica del trabajo.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-10-24T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Crear guía de aprendizaje remoto para el equipo",
+    "content": "Organizar recursos y ejercicios que se puedan completar desde casa.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-19T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Practicar presentación técnica desde casa",
+    "content": "Ensayar una explicación del proyecto y revisar el tiempo de exposición.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-10-26T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Repasar validación de datos del proyecto en casa",
+    "content": "Estudiar las reglas de entrada y preparar ejemplos para el equipo.",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Preparar ejercicios de Git para capacitación remota",
+    "content": "Crear un repositorio de práctica en el equipo del hogar.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-22T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Investigar documentación técnica durante trabajo remoto",
+    "content": "Leer las referencias del curso y anotar cómo aplicarlas al proyecto.",
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-10-14T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Revisar apuntes de seguridad del curso interno en casa",
+    "content": "",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-10-15T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Preparar demo de aprendizaje desde el hogar",
+    "content": null,
+    "status": "pending",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-25T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Practicar diseño de APIs para el trabajo desde casa",
+    "content": "Definir ejemplos de peticiones y respuestas para el proyecto.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-26T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Estudiar manejo de errores del proyecto remoto",
+    "content": "Probar fallos controlados y revisar mensajes claros desde casa.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Preparar sesión remota de resolución de dudas",
+    "content": "Reunir preguntas del curso y ejemplos del trabajo.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-28T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Revisar ejercicio de documentación del equipo en casa",
+    "content": "Comparar el resultado del ejercicio con los requisitos del proyecto.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-11-29T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Organizar plan de estudio para trabajo remoto",
+    "content": "Reservar sesiones en casa para practicar los temas del equipo.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study",
+      "work"
+    ],
+    "due_date": "2026-10-21T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Revisar presupuesto de capacitación del equipo",
+    "content": "Comparar los costos de los cursos con el presupuesto disponible.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-22T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Preparar reporte de gastos del proyecto",
+    "content": "Registrar compras y agruparlas por actividad del equipo.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-23T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Verificar pago de factura del proveedor",
+    "content": "Comprobar el estado del pago y guardar el comprobante.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Actualizar previsión de costos del proyecto",
+    "content": "Anotar los gastos previstos para la siguiente entrega.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-25T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Registrar reembolso de transporte del trabajo",
+    "content": "Adjuntar los comprobantes y revisar los importes solicitados.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-26T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Revisar renovación de licencia del equipo",
+    "content": null,
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-12T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Preparar cotización de mantenimiento del proyecto",
+    "content": "Describir las actividades y calcular los costos estimados.",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-13T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Organizar facturas de herramientas del trabajo",
+    "content": "Separar comprobantes por mes y proveedor.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-29T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Revisar presupuesto de materiales del equipo",
+    "content": "Comprobar cantidades, costos y existencias disponibles.",
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Cerrar registro de gastos de una entrega",
+    "content": "Revisar los comprobantes y confirmar los importes finales.",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-16T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Practicar conversación en un idioma nuevo",
+    "content": "",
+    "status": "pending",
+    "priority": "high",
+    "tags": [
+      "study",
+      "personal"
+    ],
+    "due_date": "2026-11-01T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Estudiar teoría musical por interés personal",
+    "content": "Repasar escalas y relacionarlas con una canción conocida.",
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [
+      "study",
+      "personal"
+    ],
+    "due_date": "2026-11-02T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Completar ejercicio de escritura creativa",
+    "content": "Escribir un relato corto y revisar su estructura.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "study",
+      "personal"
+    ],
+    "due_date": "2026-10-19T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Aprender una técnica de dibujo",
+    "content": "Estudiar un ejemplo y practicarlo en una hoja.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [
+      "study",
+      "personal"
+    ],
+    "due_date": "2026-11-04T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Revisar apuntes de fotografía personal",
+    "content": "Comparar ejercicios de encuadre realizados durante la semana.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "study",
+      "personal"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Practicar lectura de partituras",
+    "content": "Leer una melodía sencilla y comprobar el ritmo.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "study",
+      "personal"
+    ],
+    "due_date": "2026-10-22T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Estudiar historia del arte por interés personal",
+    "content": null,
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "study",
+      "personal"
+    ],
+    "due_date": "2026-11-07T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Preparar presentación del club de lectura",
+    "content": "Seleccionar fragmentos y preguntas para conversar sobre el libro.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "study",
+      "personal"
+    ],
+    "due_date": "2026-11-08T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Practicar mecanografía para mejorar velocidad",
+    "content": "Completar una sesión y registrar precisión y tiempo.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "study",
+      "personal"
+    ],
+    "due_date": "2026-10-25T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Repasar vocabulario del curso de viajes",
+    "content": "Preparar frases útiles para transporte y alojamiento.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "study",
+      "personal"
+    ],
+    "due_date": "2026-10-26T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Preparar rincón de lectura del hogar",
+    "content": "Elegir un lugar cómodo y organizar los libros pendientes.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Ordenar colección de recuerdos familiares",
+    "content": "Clasificar objetos y anotar de dónde provienen.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": "2026-10-13T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Preparar merienda para visita familiar",
+    "content": "Elegir recetas y organizar los ingredientes disponibles.",
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": "2026-10-14T18:00:00-05:00",
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Diseñar álbum de fotos para la sala",
+    "content": "Seleccionar fotografías y preparar su distribución.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": "2026-11-14T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Organizar espacio para practicar música en casa",
+    "content": "Guardar instrumentos y materiales en un lugar accesible.",
+    "status": "completed",
+    "priority": "low",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": "2026-10-16T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Preparar noche de juegos en casa",
+    "content": "Elegir juegos y confirmar quiénes participarán.",
+    "status": "canceled",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": "2026-10-17T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Revisar materiales de manualidades del hogar",
+    "content": "Ordenar herramientas y anotar lo que falta.",
+    "status": "pending",
+    "priority": "high",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Planificar decoración del dormitorio",
+    "content": null,
+    "status": "in_progress",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": "2026-11-18T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Organizar colección de películas en casa",
+    "content": "Clasificar títulos y elegir las próximas películas para ver.",
+    "status": "canceled",
+    "priority": "low",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": "2026-10-20T18:00:00-05:00",
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Preparar espacio para una afición en casa",
+    "content": "Despejar una zona y reunir los materiales de uso frecuente.",
+    "status": "pending",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "personal"
+    ],
+    "due_date": "2026-11-20T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  },
+  {
+    "title": "Estudiar presupuesto del proyecto remoto en casa",
+    "content": "Practicar el análisis de gastos del trabajo con una hoja de cálculo.",
+    "status": "in_progress",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study",
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-11-21T18:00:00-05:00",
+    "author": {
+      "name": "Ana Torres",
+      "email": "ana.torres@example.com"
+    }
+  },
+  {
+    "title": "Preparar ejercicio de costos para capacitación remota",
+    "content": "Usar datos de ejemplo para estudiar el presupuesto del equipo desde casa.",
+    "status": "completed",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study",
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-23T18:00:00-05:00",
+    "author": {
+      "name": "Luis Ramírez",
+      "email": "luis.ramirez@example.com"
+    }
+  },
+  {
+    "title": "Revisar curso de finanzas para trabajo remoto",
+    "content": "Anotar conceptos del curso y aplicarlos al proyecto desde el hogar.",
+    "status": "pending",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study",
+      "work",
+      "finance"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "María Quispe",
+      "email": "maria.quispe@example.com"
+    }
+  },
+  {
+    "title": "Practicar informe financiero del equipo en casa",
+    "content": "Estudiar un modelo de reporte y preparar una versión de ejemplo.",
+    "status": "in_progress",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study",
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-11-24T18:00:00-05:00",
+    "author": {
+      "name": "Carlos Vega",
+      "email": "carlos.vega@example.com"
+    }
+  },
+  {
+    "title": "Comparar cursos para el equipo desde casa",
+    "content": "Revisar contenido, horarios y presupuesto de las opciones de formación.",
+    "status": "completed",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study",
+      "work",
+      "finance"
+    ],
+    "due_date": "2026-10-26T18:00:00-05:00",
+    "author": {
+      "name": "Lucía Flores",
+      "email": "lucia.flores@example.com"
+    }
+  },
+  {
+    "title": "Planificar formación profesional desde casa",
+    "content": "Organizar tiempo personal, presupuesto y objetivos de estudio para el trabajo.",
+    "status": "canceled",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study",
+      "work",
+      "finance",
+      "personal"
+    ],
+    "due_date": "2026-10-12T18:00:00-05:00",
+    "author": {
+      "name": "Diego Castro",
+      "email": "diego.castro@example.com"
+    }
+  },
+  {
+    "title": "Preparar presupuesto personal para estudio remoto",
+    "content": "Distribuir los gastos del hogar y de una formación relacionada con el trabajo.",
+    "status": "in_progress",
+    "priority": "low",
+    "tags": [
+      "home",
+      "study",
+      "work",
+      "finance",
+      "personal"
+    ],
+    "due_date": "2026-11-27T18:00:00-05:00",
+    "author": {
+      "name": "Sofía Rojas",
+      "email": "sofia.rojas@example.com"
+    }
+  },
+  {
+    "title": "Organizar metas de aprendizaje y trabajo en casa",
+    "content": "Relacionar objetivos personales con cursos y recursos dentro del presupuesto.",
+    "status": "completed",
+    "priority": "medium",
+    "tags": [
+      "home",
+      "study",
+      "work",
+      "finance",
+      "personal"
+    ],
+    "due_date": "2026-10-14T18:00:00-05:00",
+    "author": {
+      "name": "Mateo Vargas",
+      "email": "mateo.vargas@example.com"
+    }
+  },
+  {
+    "title": "Revisar plan anual de capacitación desde casa",
+    "content": null,
+    "status": "canceled",
+    "priority": "high",
+    "tags": [
+      "home",
+      "study",
+      "work",
+      "finance",
+      "personal"
+    ],
+    "due_date": null,
+    "author": {
+      "name": "Valeria León",
+      "email": "valeria.leon@example.com"
+    }
+  },
+  {
+    "title": "Evaluar espacio y presupuesto para estudiar en casa",
+    "content": "Planificar mejoras del hogar para compatibilizar aprendizaje, trabajo y tiempo personal.",
+    "status": "pending",
+    "priority": "urgent",
+    "tags": [
+      "home",
+      "study",
+      "work",
+      "finance",
+      "personal"
+    ],
+    "due_date": "2026-11-30T18:00:00-05:00",
+    "author": {
+      "name": "Jorge Mendoza",
+      "email": "jorge.mendoza@example.com"
+    }
+  }
+]

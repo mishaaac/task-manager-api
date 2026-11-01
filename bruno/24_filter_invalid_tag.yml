@@ -1,0 +1,40 @@
+info:
+  name: 24 - Reject an invalid repeated tag
+  type: http
+  seq: 24
+
+http:
+  method: GET
+  url: "{{base_url}}/tasks?tag=home&tag=unknown"
+  params:
+    - name: tag
+      value: home
+      type: query
+    - name: tag
+      value: unknown
+      type: query
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Returns 422 for an invalid tag", function () {
+          expect(res.getStatus()).to.equal(422);
+        });
+
+        test("Identifies the invalid second query tag", function () {
+          const errors = res.getBody().detail;
+          expect(errors).to.be.an("array").with.lengthOf(1);
+          expect(errors[0].loc).to.deep.equal(["query", "tag", 1]);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 422 with a validation error at query.tag.1.
+  Every repeated tag is validated, even when another tag is valid.

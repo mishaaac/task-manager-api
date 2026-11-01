@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/tasks?status=pending&priority=high&tag=work"
+  url: "{{base_url}}/tasks?status=pending&priority=high&tag=work&tag=finance&direction=desc"
   params:
     - name: status
       value: pending
@@ -15,6 +15,12 @@ http:
       type: query
     - name: tag
       value: work
+      type: query
+    - name: tag
+      value: finance
+      type: query
+    - name: direction
+      value: desc
       type: query
   auth: inherit
 
@@ -29,16 +35,17 @@ runtime:
         });
 
         test("Includes the first task and excludes the second", function () {
-          expect(body).to.be.an("array");
-          expect(body).to.deep.include(JSON.parse(bru.getVar("task1_snapshot")));
-          expect(body.some(task => task.id === bru.getVar("task2_id"))).to.equal(false);
+          expect(body.items).to.be.an("array");
+          expect(body.items).to.deep.include(JSON.parse(bru.getVar("task1_snapshot")));
+          expect(body.items.some(task => task.id === bru.getVar("task2_id"))).to.equal(false);
         });
 
-        test("Every task matches all three filters", function () {
-          body.forEach(task => {
+        test("Every task matches status, priority, and both requested tags", function () {
+          body.items.forEach(task => {
             expect(task.status).to.equal("pending");
             expect(task.priority).to.equal("high");
             expect(task.tags).to.include("work");
+            expect(task.tags).to.include("finance");
           });
         });
 
@@ -49,5 +56,7 @@ settings:
   maxRedirects: 5
 
 docs: |-
-  Expected: 200 and an array containing the first task.
+  Expected: 200 and a page whose items include the first task.
+  Descending ID order keeps the newly created task on the first page.
   The status, priority, and tag filters combine with AND.
+  Repeating tag requires both work and finance, even if a task has additional tags.

@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/tasks?status=in_progress&priority=low&tag=study"
+  url: "{{base_url}}/tasks?status=in_progress&priority=low&tag=study&tag=personal&direction=desc"
   params:
     - name: status
       value: in_progress
@@ -15,6 +15,12 @@ http:
       type: query
     - name: tag
       value: study
+      type: query
+    - name: tag
+      value: personal
+      type: query
+    - name: direction
+      value: desc
       type: query
   auth: inherit
 
@@ -29,16 +35,17 @@ runtime:
         });
 
         test("Includes the second task and excludes the first", function () {
-          expect(body).to.be.an("array");
-          expect(body).to.deep.include(JSON.parse(bru.getVar("task2_snapshot")));
-          expect(body.some(task => task.id === bru.getVar("task1_id"))).to.equal(false);
+          expect(body.items).to.be.an("array");
+          expect(body.items).to.deep.include(JSON.parse(bru.getVar("task2_snapshot")));
+          expect(body.items.some(task => task.id === bru.getVar("task1_id"))).to.equal(false);
         });
 
-        test("Every task matches all three filters", function () {
-          body.forEach(task => {
+        test("Every task matches status, priority, and both requested tags", function () {
+          body.items.forEach(task => {
             expect(task.status).to.equal("in_progress");
             expect(task.priority).to.equal("low");
             expect(task.tags).to.include("study");
+            expect(task.tags).to.include("personal");
           });
         });
 
@@ -49,5 +56,7 @@ settings:
   maxRedirects: 5
 
 docs: |-
-  Expected: 200 and an array containing the second task.
+  Expected: 200 and a page whose items include the second task.
+  Descending ID order keeps the newly created task on the first page.
   Checks a different combination of status, priority, and tag.
+  Both study and personal must be present in every returned task.

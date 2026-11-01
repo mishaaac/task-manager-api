@@ -16,7 +16,8 @@ extensions:
       - .git
 
 docs: |-
-  CRUD test collection for Task Manager.
-  Run all 19 requests in order using Collection Runner.
+  CRUD, pagination, and multi-tag filter tests for Task Manager.
+  Start the API with the bundled 200-task example file.
+  Run all 24 requests in order using Collection Runner.
   The first two requests save task IDs for subsequent requests.
   See README.md for setup instructions and expected results.

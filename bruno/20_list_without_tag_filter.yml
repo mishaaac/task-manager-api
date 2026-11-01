@@ -1,0 +1,40 @@
+info:
+  name: 20 - List without a tag filter
+  type: http
+  seq: 20
+
+http:
+  method: GET
+  url: "{{base_url}}/tasks?per_page=50"
+  params:
+    - name: per_page
+      value: "50"
+      type: query
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        const body = res.getBody();
+
+        test("Returns 200 OK", function () {
+          expect(res.getStatus()).to.equal(200);
+        });
+
+        test("Omitting tag includes tasks with and without tags", function () {
+          expect(body.total).to.be.at.least(200);
+          expect(body.items).to.be.an("array");
+          expect(body.items.some(task => task.tags.length === 0)).to.equal(true);
+          expect(body.items.some(task => task.tags.length > 0)).to.equal(true);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 10000
+  followRedirects: true
+  maxRedirects: 5
+
+docs: |-
+  Expected: 200 and a page containing tasks with and without tags.
+  Omitting tag disables tag filtering. Uses the bundled 200-task example file.

@@ -5,7 +5,17 @@ info:
 
 http:
   method: GET
-  url: "{{base_url}}/tasks"
+  url: "{{base_url}}/tasks?per_page=50&order_by=id&direction=desc"
+  params:
+    - name: per_page
+      value: "50"
+      type: query
+    - name: order_by
+      value: id
+      type: query
+    - name: direction
+      value: desc
+      type: query
   auth: inherit
 
 runtime:
@@ -18,14 +28,23 @@ runtime:
           expect(res.getStatus()).to.equal(200);
         });
 
-        test("Returns an array containing both created tasks", function () {
-          expect(body).to.be.an("array");
-          expect(body).to.deep.include(JSON.parse(bru.getVar("task1_snapshot")));
-          expect(body).to.deep.include(JSON.parse(bru.getVar("task2_snapshot")));
+        test("Returns a page containing both created tasks", function () {
+          expect(body.items).to.be.an("array");
+          expect(body.items).to.deep.include(JSON.parse(bru.getVar("task1_snapshot")));
+          expect(body.items).to.deep.include(JSON.parse(bru.getVar("task2_snapshot")));
+        });
+
+        test("Returns the requested pagination and ordering", function () {
+          expect(body.page).to.equal(1);
+          expect(body.per_page).to.equal(50);
+          expect(body.order_by).to.equal("id");
+          expect(body.direction).to.equal("desc");
+          expect(body.has_prev).to.equal(false);
+          expect(body.items.length).to.be.at.most(50);
         });
 
         test("The task with an invalid email was not saved", function () {
-          expect(body.some(task => task.author.email === "correo-invalido")).to.equal(false);
+          expect(body.items.some(task => task.author.email === "correo-invalido")).to.equal(false);
         });
 
 settings:
@@ -35,5 +54,5 @@ settings:
   maxRedirects: 5
 
 docs: |-
-  Expected: 200 and an array of tasks, without a count/data wrapper.
-  With an empty initial store, it should contain exactly the two created tasks.
+  Expected: 200 and a paginated object with tasks in items.
+  Descending ID order puts the two newly created tasks before the startup examples.

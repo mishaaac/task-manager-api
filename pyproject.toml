@@ -1,7 +1,7 @@
 [project]
 name = "task-manager-api"
 version = "0.2.0"
-description = "An in-memory task API with Pydantic validation, filters, and partial updates."
+description = "An in-memory task API with validation, pagination, search, multi-tag filters, and partial updates."
 readme = "README.md"
 authors = [
     { name = "mishaaac" }
@@ -16,3 +16,6 @@ dependencies = [
 [build-system]
 requires = ["uv_build>=0.13.6,<0.14.0"]
 build-backend = "uv_build"
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Query"]
