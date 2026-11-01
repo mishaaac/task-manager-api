@@ -316,10 +316,10 @@ def delete_task(id: int):
 
 
 # ================================================================
-#                       DATOS DE EJEMPLO
+#                       EXAMPLE DATA
 # ================================================================
 
-# Se cargan al iniciar; los cambios de la API solo se guardan en memoria.
+# Loaded at startup; API changes are only stored in memory.
 tasks_path = Path(__file__).with_name("tasks.json")
 
 if tasks_path.exists():
